@@ -1,12 +1,13 @@
 # Random real address generator
 
-Random real address is a OpenStreet based generator, NodeJS library. Create address.json on root your project.
+Random real address is a OpenStreet based generator, NodeJS library. 
+Create address.json in root your project.
 # Installation (nodejs library)
- ```sh
+ ```
 npm i real-random-address
 ```
 # Usage example
- ```sh
+ ```js
 const rrag = require('real-random-address');
 rrag.random();
 
