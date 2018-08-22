@@ -3,11 +3,11 @@
 Random real address is a OpenStreet based generator, NodeJS library. Create address.json on root your project.
 # Installation (nodejs library)
  ```sh
-npm install rrag
+npm i real-random-address
 ```
 # Usage example
  ```sh
-const rrag = require('rrag');
+const rrag = require('real-random-address');
 rrag.random();
 
 // For read address.json
