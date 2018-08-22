@@ -1,11 +1,12 @@
 
- exports.rra = function RRA() {
+ exports.random = function RRA(local) {
     const random = require('random-world')
     const NodeGeocoder = require('node-geocoder');
     const fs = require('fs')
 
     var options = {
-        provider: 'openstreetmap'
+        provider: 'openstreetmap',
+        language: local
     };
     var geocoder = NodeGeocoder(options);
 
@@ -27,11 +28,6 @@
             lat: 50.113611,
             lng: 8.679722,
             name: 'Frankfurn'
-        },
-        {
-            lat: 45.463889,
-            lng: 9.191389,
-            name: 'Milan'
         },
         {
             lat: 45.463889,
@@ -67,22 +63,15 @@
             lat: 52.231432,
             lng: 21.000992,
             name: 'Warszawa'
-        },
-        {
-            lat: 50.448160,
-            lng: 30.480995,
-            name: 'Kiev'
         }
     ]
 
     let locData = cityArr[Math.floor(Math.random() * cityArr.length)];
 
-    // ROUND (10 - більша площа 100 - менша площа)
     let lat = Math.round(locData.lat * 10) / 10;
     let lng = Math.round(locData.lng * 10) / 10;
 
 
-    // Or using Promise
     geocoder.reverse({ lat: `${lat + latRand}`, lon: `${lng + longRand}` })
         .then(function (res) {
             if (
@@ -94,7 +83,7 @@
                 res[0].streetNumber == undefined ||
                 res[0].state == undefined
             ) {
-                RRA()
+                RRA(local)
             } else {
                 let data = {
                     country: res[0].country,
@@ -111,6 +100,6 @@
             }
         })
         .catch(function (err) {
-            RRA()
+            RRA(local)
         })
 }
