@@ -95,7 +95,6 @@
                     zip: res[0].zipcode
                 }
                 let jsonData = JSON.stringify(data);
-                console.log(jsonData);
                 fs.writeFile('address.json',jsonData, err =>{ if(err) console.log(err)})
             }
         })
