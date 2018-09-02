@@ -1,5 +1,5 @@
 # Real random address generator
-[![NpmVersion](https://img.shields.io/badge/npm-1.0.4-brightgreen.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/real-random-address)  [![NpmLicense](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://www.npmjs.com/package/real-random-address)
+[![NpmVersion](https://img.shields.io/badge/npm-1.0.5-brightgreen.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/real-random-address)  [![NpmLicense](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://www.npmjs.com/package/real-random-address)
 
 Real random address is a OpenStreet based generator, NodeJS library. 
 Create address.json in root your project.
@@ -11,12 +11,20 @@ npm i real-random-address
 Step 1. Create the rrag.js file with the following code:
  ```js
 const rrag = require('real-random-address');
-rrag.random(); // => address.json 
+rrag.random(); // => address.json  Get random cities from list!
+
+// Countries
+rrag.uk();
+rrag.de();
+rrag.fr();
+rrag.it();
+rrag.pl();
+rrag.ukr();
 
 //Language options. Look 'Accept-Language'
 rrag.random("en");
-rrag.random("us");
-rrag.random("ru");
+rrag.de("us");
+rrag.pl("ru");
 ```
 Step 2. Create yourApp.js file with the following code:
  ```js
@@ -55,14 +63,47 @@ Step 4. Run script in terminal:
  ```sh
  npm run get-address-example
 ```
+### Available countries:
+ - United Kingdom
+ - Germany
+ - France
+ - Italy
+ - Poland
+ - Ukraine
 ### Available cities:
-  - Paris
-  - Berlin
-  - Frankfurt
-  - Milan
-  - Stambul
-  - London
-  - Madrid
-  - Rome
-  - Wien
-  - Warszawa
+ - In random:
+Bari
+Berlin
+Birmingham
+Dusselldorf
+Elblag
+Firenze
+Frankfurn
+Gdansk
+Krakow
+Leeds
+Leipzig
+Liverpool
+London
+London
+Lubline
+Lyon
+Madrid
+Manchester
+Mannheim
+Marseille
+Milan
+Milano
+Napoli
+Newcastle
+Poznan
+Preston
+Radom
+Rennes
+Rome
+Stambul
+Stuttgart
+Tourine
+Venezia
+Warszawa
+Wroclaw

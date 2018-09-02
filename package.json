@@ -1,10 +1,9 @@
 {
   "name": "real-random-address",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate real random address",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EugeneFenko/real-random-address.git"
@@ -12,7 +11,9 @@
   "keywords": [
     "real",
     "random",
-    "address"
+    "address",
+    "generator",
+    "openstreetmap"
   ],
   "author": "Eugene Fenko",
   "license": "MIT",
@@ -21,7 +22,6 @@
   },
   "homepage": "https://github.com/EugeneFenko/real-random-address#readme",
   "dependencies": {
-    "node-geocoder": "^3.22.0",
-    "random-world": "^1.2.1"
+    "node-geocoder": "^3.22.0"
   }
 }
