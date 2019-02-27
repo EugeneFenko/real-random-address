@@ -737,11 +737,6 @@ exports.it = function RRA(local) {
             name: 'Tourine'
         },
         {
-            lat: 51.507222,
-            lng: -0.1275,
-            name: 'London'
-        },
-        {
             lat: 41.893056,
             lng: 12.483333,
             name: 'Rome'
@@ -864,6 +859,100 @@ exports.pl = function RRA(local) {
             lat: 52.231432,
             lng: 21.000992,
             name: 'Warszawa'
+        }
+    ]
+
+    let locData = cityArr[Math.floor(Math.random() * cityArr.length)];
+
+    let lat = Math.round(locData.lat * 10) / 10;
+    let lng = Math.round(locData.lng * 10) / 10;
+
+    geocoder.reverse({ lat: `${lat + latRand}`, lon: `${lng + longRand}` })
+        .then(function (res) {
+
+            if (
+                res[0].city == undefined ||
+                res[0].country == undefined ||
+                res[0].countryCode == undefined ||
+                res[0].zipcode == undefined ||
+                res[0].streetName == undefined ||
+                res[0].streetNumber == undefined ||
+                res[0].state == undefined
+            ) {
+                RRA(local)
+            } else {
+
+                if (local == 'ru' || local == 'ua' || local == undefined) {
+
+                    // RESULT RU-other
+                    let data = {
+                        country: res[0].country,
+                        short: res[0].countryCode,
+                        state: res[0].state,
+                        city: res[0].city,
+                        street: res[0].streetName,
+                        number: res[0].streetNumber,
+                        zip: res[0].zipcode
+                    }
+                    let jsonData = JSON.stringify(data);
+                    fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
+
+                } else {
+                    if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
+                        // RESULT non-RU
+                        let data = {
+                            country: res[0].country,
+                            short: res[0].countryCode,
+                            state: res[0].state,
+                            city: res[0].city,
+                            street: res[0].streetName,
+                            number: res[0].streetNumber,
+                            zip: res[0].zipcode
+                        }
+                        let jsonData = JSON.stringify(data);
+                        fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
+                    }
+                }
+            }
+        })
+        .catch(function (err) {
+            RRA(local)
+        })
+}
+
+exports.nl = function RRA(local) {
+
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    const NodeGeocoder = require('node-geocoder');
+    const fs = require('fs')
+
+    var options = {
+        provider: 'openstreetmap',
+        language: local
+    };
+    var geocoder = NodeGeocoder(options);
+
+    let latRand = `${randomInteger(10000, 99999)}`;
+    let longRand = `${randomInteger(10000, 99999)}`;
+
+    let cityArr = [
+        {
+            lat: 52.372763, 
+            lng: 4.893148,
+            name: 'Amsterdam'
+        },
+        {
+            lat: 51.923706, 
+            lng: 4.477322,
+            name: 'Rotterdam'
+        },
+        {
+            lat: 52.220592, 
+            lng: 6.895484,
+            name: 'Enschede'
         }
     ]
 

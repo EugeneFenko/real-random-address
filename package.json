@@ -1,6 +1,6 @@
 {
   "name": "real-random-address",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate real random address",
   "main": "index.js",
   "scripts": {},
