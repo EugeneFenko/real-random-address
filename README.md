@@ -1,5 +1,5 @@
 # Real random address generator
-[![NpmVersion](https://img.shields.io/badge/npm-1.0.6-brightgreen.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/real-random-address)  [![NpmLicense](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://www.npmjs.com/package/real-random-address)
+[![NpmVersion](https://img.shields.io/badge/npm-1.0.7-brightgreen.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/real-random-address)  [![NpmLicense](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://www.npmjs.com/package/real-random-address)
 
 Real random address is a OpenStreet based generator, NodeJS library. 
 Create address.json in root your project.
@@ -19,7 +19,8 @@ rrag.de();
 rrag.fr();
 rrag.it();
 rrag.pl();
-rrag.ukr();
+rrag.ua();
+rrag.nl();
 
 //Language options. Look 'Accept-Language'
 rrag.random("en");
@@ -70,13 +71,16 @@ Step 4. Run script in terminal:
  - Italy
  - Poland
  - Ukraine
+ - Netherlands
 ### Available cities:
  - In random:
+Amsterdam
 Bari
 Berlin
 Birmingham
 Dusselldorf
 Elblag
+Enschede
 Firenze
 Frankfurn
 Gdansk
@@ -101,6 +105,7 @@ Preston
 Radom
 Rennes
 Rome
+Rotterdam
 Stambul
 Stuttgart
 Tourine

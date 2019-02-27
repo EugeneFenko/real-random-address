@@ -236,7 +236,7 @@ exports.random = function RRA(local) {
         })
 }
 
-exports.ukr = function RRA(local) {
+exports.ua = function RRA(local) {
 
     function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
