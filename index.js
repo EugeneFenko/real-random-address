@@ -508,11 +508,11 @@ exports.de = function RRA(local) {
             lng: 13.388889,
             name: 'Berlin'
         },
-        {
-            lat: 50.113611,
-            lng: 8.679722,
-            name: 'Frankfurt'
-        }
+        // {
+        //     lat: 50.113611,
+        //     lng: 8.679722,
+        //     name: 'Frankfurt'
+        // }
     ]
 
     let locData = cityArr[Math.floor(Math.random() * cityArr.length)];
