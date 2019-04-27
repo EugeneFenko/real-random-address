@@ -1,6 +1,6 @@
 {
   "name": "real-random-address",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Generate real random address",
   "main": "index.js",
   "scripts": {},
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/EugeneFenko/real-random-address#readme",
   "dependencies": {
     "node-geocoder": "^3.22.0"
+  },
+  "devDependencies": {
+    "latinize": "^0.4.0"
   }
 }

@@ -6,7 +6,8 @@ exports.random = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -219,13 +220,13 @@ exports.random = function RRA(local) {
                 RRA(local)
             } else {
                 let data = {
-                    country: res[0].country,
-                    short: res[0].countryCode,
-                    state: res[0].state,
-                    city: res[0].city,
-                    street: res[0].streetName,
-                    number: res[0].streetNumber,
-                    zip: res[0].zipcode
+                    country: latin(res[0].country),
+                    short: latin(res[0].countryCode),
+                    state: latin(res[0].state),
+                    city: latin(res[0].city),
+                    street: latin(res[0].streetName),
+                    number: latin(res[0].streetNumber),
+                    zip: latin(res[0].zipcode)
                 }
                 let jsonData = JSON.stringify(data);
                 fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -243,7 +244,8 @@ exports.ua = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -346,13 +348,13 @@ exports.ua = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -372,7 +374,8 @@ exports.fr = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -445,13 +448,13 @@ exports.fr = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -472,6 +475,7 @@ exports.de = function RRA(local) {
 
     const NodeGeocoder = require('node-geocoder');
     const fs = require('fs')
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -554,13 +558,13 @@ exports.de = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -580,7 +584,8 @@ exports.uk = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -668,13 +673,13 @@ exports.uk = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -694,7 +699,8 @@ exports.it = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -782,13 +788,13 @@ exports.it = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -808,7 +814,8 @@ exports.pl = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -886,13 +893,13 @@ exports.pl = function RRA(local) {
 
                     // RESULT RU-other
                     let data = {
-                        country: res[0].country,
-                        short: res[0].countryCode,
-                        state: res[0].state,
-                        city: res[0].city,
-                        street: res[0].streetName,
-                        number: res[0].streetNumber,
-                        zip: res[0].zipcode
+                        country: latin(res[0].country),
+                        short: latin(res[0].countryCode),
+                        state: latin(res[0].state),
+                        city: latin(res[0].city),
+                        street: latin(res[0].streetName),
+                        number: latin(res[0].streetNumber),
+                        zip: latin(res[0].zipcode)
                     }
                     let jsonData = JSON.stringify(data);
                     fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
@@ -927,7 +934,8 @@ exports.nl = function RRA(local) {
     }
 
     const NodeGeocoder = require('node-geocoder');
-    const fs = require('fs')
+    const fs = require('fs');
+    const latin = require('latinize');
 
     var options = {
         provider: 'openstreetmap',
@@ -995,13 +1003,13 @@ exports.nl = function RRA(local) {
                     if (/[а-яА-ЯЁё]/.test(JSON.stringify(res)) == true) { RRA(local) } else {
                         // RESULT non-RU
                         let data = {
-                            country: res[0].country,
-                            short: res[0].countryCode,
-                            state: res[0].state,
-                            city: res[0].city,
-                            street: res[0].streetName,
-                            number: res[0].streetNumber,
-                            zip: res[0].zipcode
+                            country: latin(res[0].country),
+                            short: latin(res[0].countryCode),
+                            state: latin(res[0].state),
+                            city: latin(res[0].city),
+                            street: latin(res[0].streetName),
+                            number: latin(res[0].streetNumber),
+                            zip: latin(res[0].zipcode)
                         }
                         let jsonData = JSON.stringify(data);
                         fs.writeFile('address.json', jsonData, err => { if (err) {console.log(err)} else {console.log('Success! address.json created')} })
